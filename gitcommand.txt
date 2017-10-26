@@ -1,0 +1,22 @@
+This is a git helper file which includes basic git flow commands. 
+
+we will not work on master but will work on develop,
+we will only work on "develop" branch
+
+
+git flow commands:
+
+git branch  // lists the branch that has been created
+
+git checkout -b "develop"  //creates a develop branch
+
+git fetch origin develop   // fethces changes from develop branch
+
+git merge    //merge the change with your local repo
+
+git add . // add your files to stage
+
+git commit -m "message" //commit with your message 
+
+git push origin develop // push your changes to develop branch
+
