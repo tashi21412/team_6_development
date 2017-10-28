@@ -20,3 +20,5 @@ git commit -m "message" //commit with your message
 
 git push origin develop // push your changes to develop branch
 
+defaults write com.apple.finder AppleShowAllFiles YES //just for apple to hide/show hidden files 
+
