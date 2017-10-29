@@ -12,6 +12,8 @@ public class DAOUtilities {
 	
 	private static Connection connection = null;
 	
+	private static UserDaoImpl userDaoImpl = null;
+	
 	public static synchronized Connection getConnection() throws SQLException {
 		
 		if(connection == null) {
@@ -34,6 +36,16 @@ public class DAOUtilities {
 		
 		return connection;
 		
+	}
+	
+	public static synchronized UserDAO getUserDAO() {
+		
+		if(userDaoImpl  == null) {
+			userDaoImpl = new UserDaoImpl();
+		}
+		
+		return userDaoImpl;
+			
 	}
 
 }

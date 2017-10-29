@@ -4,8 +4,8 @@ import com.trms.model.User;
 
 public interface UserDAO {
 
-	void registerAccount(User user);
+	void registerAccount(User user) throws Exception;
 	
-	void loginAccount(User user);
+	void loginAccount(User user) throws Exception;
 	
 }
