@@ -1,6 +1,12 @@
 
 -------- CREATES THE TABLES FOR TRMS PROJECT---------------------------
 
+--STEPS TO CREATE YOUR DABATASE:
+1. RUN PART 1 TO CREATE ALL TABLES and sequences 
+2. RUN PART II TO SEED VALUES INTO REFERENCE TABLES 
+
+--******************************* PART I ******************************
+
 CREATE TABLE "MEDALISTRELLES"."BANKCUST" 
    (    "C_ID" NUMBER, 
     "FNAME" VARCHAR2(255 BYTE), 
@@ -100,3 +106,61 @@ CREATE TABLE "MEDALISTRELLES"."USERS"
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS" ;
+   
+--PKs Sequences to auto-increment   
+--1) EVENT_ID AUTO INCREMENT 
+CREATE SEQUENCE PK_EVENTID START WITH 1 INCREMENT BY 1;
+--2) EVENT_STATUS_ID INCREMENT 
+CREATE SEQUENCE PK_EVENT_STATUS_ID START WITH 1 INCREMENT BY 1;
+--3) EVENT_TYPEID INCREMENT
+CREATE SEQUENCE PK_EVENT_TYPEID START WITH 1 INCREMENT BY 1;
+--4) GRADEFORMAT_ID INCREMENT
+CREATE SEQUENCE PK_GRADEFORMAT_ID START WITH 1 INCREMENT BY 1;
+--5) ROLE_ID INCREMENT 
+CREATE SEQUENCE PK_EVENTID START WITH 1 INCREMENT BY 1;
+--6) USER_ID INCREMENT
+CREATE SEQUENCE PK_USER_ID START WITH 1 INCREMENT BY 1;
+--******************************* PART II ******************************  
+INSERT INTO event_status  
+
+INSERT INTO suppliers
+(supplier_id, supplier_name)
+VALUES
+(5000, 'Apple');  
+  
+COMMIT;  
+
+------------------  WORK LEFT TO BE DONE BY MEDALIS----------------------------  
+--  3. Auto-increment Pks
+--  4.Add values to Event_status lookup table
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
