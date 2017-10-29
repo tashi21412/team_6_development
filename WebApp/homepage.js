@@ -1,7 +1,7 @@
 window.onload = function(){
 	
 	document.getElementById("openNav").addEventListener("click",w3_open, false);
-	document.getElementById("closeNav").addEventListener("click",w3_close, false);
+	
 }
 
 function w3_open() {
