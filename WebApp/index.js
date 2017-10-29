@@ -4,9 +4,6 @@ window.onload = function(){
 }
 
 function signUp(){
- 	//var element = document.getElementById("signin");
-	//element.innerHTML = document.getElementById("signUp").innerHTML;
-
-
+ 
 
 }

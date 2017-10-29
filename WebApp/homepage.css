@@ -1,4 +1,14 @@
-.header{
-	background-color: grey;
-	border: 2px solid red;
+
+h1{
+    float: right;
+    margin-bottom: 20px;
+  }
+
+.userinfo{
+	float:left;
+
+}
+
+.attchButton{
+	margin-top: 15px;
 }
