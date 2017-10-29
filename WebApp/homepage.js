@@ -16,21 +16,35 @@ function w3_close() {
   document.getElementById("openNav").style.display = "inline-block";
 }
 
+
  $(document).ready(function(){
         $("#enterProfile").click(function(){
             
-            $("#content").replaceWith(document.getElementById("profile").innerHTML);
+            //$("#content").replaceWith(document.getElementById("profile").innerHTML);
+          	$("#content").hide();
+          	$("#profile").show();
+          	$("#form").hide();
           	w3_close();
+          	
+          	
         });
  });
 
 
  $(document).ready(function(){
         $("#enterForm").click(function(){
-            
-            $("#content").replaceWith(document.getElementById("form").innerHTML);
+            $("#content").hide();
+          	$("#profile").hide();
+          	$("#form").show();
           	w3_close();
         });
     });
-
+ $(document).ready(function(){
+        $("#home").click(function(){
+            $("#content").show();
+          	$("#profile").hide();
+          	$("#form").hide();
+          	w3_close();
+        });
+    });
  
