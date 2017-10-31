@@ -16,7 +16,7 @@ public class UserDaoImpl implements UserDAO {
 		
 		try {
 			connection = DAOUtilities.getConnection();
-			String sql = "INSERT INTO USERS VALUES (?, ?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO USERS1 VALUES (?, ?, ?, ?, ?, ?)";
 			stmt = connection.prepareStatement(sql);
 			stmt.setString(1, user.getUsername());
 			stmt.setString(2, user.getPassword());
