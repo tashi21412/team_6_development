@@ -2,10 +2,8 @@
     <wb-module deploy-name="TRMS-0.0.1-SNAPSHOT">
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
-<<<<<<< HEAD
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-=======
->>>>>>> ece717a363b8b49406f581447d780b2f85d8b386
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/webapp"/>
         <property name="context-root" value="TRMS"/>
         <property name="java-output-path" value="/TRMS/target/classes"/>
     </wb-module>

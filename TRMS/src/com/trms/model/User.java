@@ -1,6 +1,6 @@
 package com.trms.model;
 
-import java.util.Calendar;
+//import java.sql.Date;
 
 public class User {
 
@@ -14,12 +14,23 @@ public class User {
 	
 	private String role = "";
 	
-	private Calendar hiredDate;
+//	private Date hiredDate;
 	
-	private double availableReimburstment = 0;	
+	private double availableReimbursement = 0;	
 
 	public User() {
 		super();
+	}
+
+	public User(String username, String password, String firstName, String lastName, String role,
+			double availableReimbursement) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.role = role;
+		this.availableReimbursement = availableReimbursement;
 	}
 
 	public String getUsername() {
@@ -62,27 +73,33 @@ public class User {
 		this.role = role;
 	}
 
-	public Calendar getHiredDate() {
-		return hiredDate;
-	}
-
-	public void setHiredDate(Calendar hiredDate) {
-		this.hiredDate = hiredDate;
-	}
+//	public Date getHiredDate() {
+//		return hiredDate;
+//	}
+//
+//	public void setHiredDate(Date hiredDate) {
+//		this.hiredDate = hiredDate;
+//	}
 	
-	public double getavailableReimburstment() {
-		return availableReimburstment;
+	public double getAvailableReimbursement() {
+		return availableReimbursement;
 	}
 
-	public void setavailableReimburstment(double availableReimburstment) {
-		this.availableReimburstment = availableReimburstment;
+	public void setAvailableReimbursement(double availableReimbursement) {
+		this.availableReimbursement = availableReimbursement;
 	}
 
 	@Override
 	public String toString() {
 		return "User [username=" + username + ", password=" + password + ", firstName=" + firstName + ", lastName="
-				+ lastName + ", role=" + role + ", hiredDate=" + hiredDate + ", availableReimburstment="
-				+ availableReimburstment + "]";
+				+ lastName + ", role=" + role + ", availableReimbursement=" + availableReimbursement + "]";
 	}
+
+//	@Override
+//	public String toString() {
+//		return "User [username=" + username + ", password=" + password + ", firstName=" + firstName + ", lastName="
+//				+ lastName + ", role=" + role + ", hiredDate=" + hiredDate + ", availableReimbursement="
+//				+ availableReimbursement + "]";
+//	}
 		
 }
