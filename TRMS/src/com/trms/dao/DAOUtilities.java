@@ -6,7 +6,6 @@ import java.sql.SQLException;
 
 public class DAOUtilities {
 
-	// groupproj1.c7bgoxp8ztvz.us-east-2.rds.amazonaws.com
 	private static final String url = "jdbc:oracle:thin:@groupproj1.c7bgoxp8ztvz.us-east-2.rds.amazonaws.com:1521:ORCL";
 	private static final String connectionUsername = "medalistrelles";
 	private static final String connectionPassword = "mypassword";
