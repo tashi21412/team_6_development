@@ -11,11 +11,11 @@
   <body>
     <div class = "logincard">
       <div class="w3-container">
+        
         <h2>Welcome to MyBank</h2>
       </div>
-
       <div id="signInPage">
-        <form class="w3-container">
+      <form class="w3-container">
 
         <label class="w3-text-light-grey"><b>Username</b></label>
         <input class="w3-input w3-border w3-light-grey" type="text">
@@ -27,20 +27,14 @@
 
         <button id="toSignIn" class="w3-btn w3-blue-grey"><a href="homepage.html">Sign In</button>
 
-<<<<<<< HEAD
          <button id= "toSignUp" class="w3-btn w3-blue-grey" >Sign Up</button>
 
       </form>
     </div>
     </div>
-=======
-         <button id= "toSignUp" class="w3-btn w3-blue-grey" ><a href = "#">Sign Up</a></button>
->>>>>>> 3496658842acdb362312a59ccef07972af54f802
 
-        </form>
-      </div>
 
-      <div id = "signUpPage" hidden ="true">
+    <div id = "signUpPage" class="logincard" hidden ="true">
 
         <form class="w3-container">
 
@@ -63,25 +57,14 @@
           <button id = "someOtherName"class="w3-btn w3-blue-grey">Sign Up</button>
          </form>
 
-      </div>
-
     </div>
-
-
-
-    
 
     <script>
 
     $(document).ready(function(){
         $("#toSignUp").click(function(){
-<<<<<<< HEAD
             
             $("#signInPage").replaceWith(document.getElementById("signUpPage").innerHTML);
-=======
-            $("#signInPage").hide();
-            $("#signUpPage").show(400);
->>>>>>> 3496658842acdb362312a59ccef07972af54f802
           
         });
     });

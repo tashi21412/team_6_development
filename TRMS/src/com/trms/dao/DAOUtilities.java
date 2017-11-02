@@ -13,6 +13,7 @@ public class DAOUtilities {
 	private static Connection connection = null;
 	
 	private static UserDaoImpl userDaoImpl = null;
+	private static FormDaoImpl formDaoImpl = null;
 	
 	public static synchronized Connection getConnection() throws SQLException {
 		
@@ -40,7 +41,7 @@ public class DAOUtilities {
 	
 	public static synchronized UserDAO getUserDAO() {
 		
-		if(userDaoImpl  == null) {
+		if(userDaoImpl == null) {
 			userDaoImpl = new UserDaoImpl();
 		}
 		
@@ -48,4 +49,14 @@ public class DAOUtilities {
 			
 	}
 
+	public static synchronized FormDAO getFormDAO() {
+		
+		if(formDaoImpl == null) {
+			formDaoImpl = new FormDaoImpl();
+		}
+		
+		return formDaoImpl;
+			
+	}
+	
 }

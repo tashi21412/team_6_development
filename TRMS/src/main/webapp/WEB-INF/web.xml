@@ -18,5 +18,15 @@
   <servlet-mapping>
     <servlet-name>RegistrationServlet</servlet-name>
     <url-pattern>/RegistrationServlet</url-pattern>
-  </servlet-mapping>  
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FormServlet</display-name>
+    <servlet-name>FormServlet</servlet-name>
+    <servlet-class>com.trms.servlet.FormServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FormServlet</servlet-name>
+    <url-pattern>/FormServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

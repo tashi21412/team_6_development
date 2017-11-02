@@ -1,9 +1,11 @@
 package com.trms.model;
 
-//import java.sql.Date;
+import java.util.Date;
 
 public class User {
 
+	private long userID = 0;
+	
 	private String username = "";
 	
 	private String password = "";
@@ -12,25 +14,34 @@ public class User {
 	
 	private String lastName = "";
 	
-	private String role = "";
+	private String email = "";
 	
-//	private Date hiredDate;
+	private Date hiredDate = null;
 	
-	private double availableReimbursement = 0;	
+	private double availableReimbursement = 0.00;
 
 	public User() {
 		super();
 	}
 
-	public User(String username, String password, String firstName, String lastName, String role,
+	public User(String username, String password, String firstName, String lastName, String email, Date hiredDate,
 			double availableReimbursement) {
 		super();
 		this.username = username;
 		this.password = password;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.role = role;
+		this.email = email;
+		this.hiredDate = hiredDate;
 		this.availableReimbursement = availableReimbursement;
+	}
+
+	public long getUserID() {
+		return userID;
+	}
+
+	public void setUserID(long userID) {
+		this.userID = userID;
 	}
 
 	public String getUsername() {
@@ -65,22 +76,22 @@ public class User {
 		this.lastName = lastName;
 	}
 
-	public String getRole() {
-		return role;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setRole(String role) {
-		this.role = role;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
-//	public Date getHiredDate() {
-//		return hiredDate;
-//	}
-//
-//	public void setHiredDate(Date hiredDate) {
-//		this.hiredDate = hiredDate;
-//	}
-	
+	public Date getHiredDate() {
+		return hiredDate;
+	}
+
+	public void setHiredDate(Date hiredDate) {
+		this.hiredDate = hiredDate;
+	}
+
 	public double getAvailableReimbursement() {
 		return availableReimbursement;
 	}
@@ -91,15 +102,9 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [username=" + username + ", password=" + password + ", firstName=" + firstName + ", lastName="
-				+ lastName + ", role=" + role + ", availableReimbursement=" + availableReimbursement + "]";
+		return "User [userID=" + userID + ", username=" + username + ", password=" + password + ", firstName="
+				+ firstName + ", lastName=" + lastName + ", email=" + email + ", hiredDate=" + hiredDate
+				+ ", availableReimbursement=" + availableReimbursement + "]";
 	}
-
-//	@Override
-//	public String toString() {
-//		return "User [username=" + username + ", password=" + password + ", firstName=" + firstName + ", lastName="
-//				+ lastName + ", role=" + role + ", hiredDate=" + hiredDate + ", availableReimbursement="
-//				+ availableReimbursement + "]";
-//	}
 		
 }
