@@ -6,10 +6,16 @@ import java.sql.SQLException;
 
 public class DAOUtilities {
 
+<<<<<<< HEAD:TRMS/src/main/java/com/trms/dao/DAOUtilities.java
 	// groupproj1.c7bgoxp8ztvz.us-east-2.rds.amazonaws.com
 	private static final String url = "jdbc:oracle:thin:@mydatabase.caado1dqwhw6.us-west-2.rds.amazonaws.com:1521:ORCL";
 	private static final String connectionUsername = "chinook";
 	private static final String connectionPassword = "Jampa21412";
+=======
+	private static final String url = "jdbc:oracle:thin:@groupproj1.c7bgoxp8ztvz.us-east-2.rds.amazonaws.com:1521:ORCL";
+	private static final String connectionUsername = "medalistrelles";
+	private static final String connectionPassword = "mypassword";
+>>>>>>> 27396b7172fa81b4968936999ce5109755cbba6e:TRMS/src/com/trms/dao/DAOUtilities.java
 	
 	private static Connection connection = null;
 	
