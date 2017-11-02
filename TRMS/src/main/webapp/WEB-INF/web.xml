@@ -28,5 +28,5 @@
   <servlet-mapping>
     <servlet-name>FormServlet</servlet-name>
     <url-pattern>/FormServlet</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping>  
 </web-app>

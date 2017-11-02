@@ -1,8 +1,6 @@
 package com.trms.servlet;
 
 import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -28,10 +26,13 @@ public class FormServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String stringDate = request.getParameter("eventDate");
-		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+		String[] arrayDate = stringDate.split("/");
+		int date = Integer.parseInt(arrayDate[0]);
+		int month = Integer.parseInt(arrayDate[1]);
+		int year = Integer.parseInt(arrayDate[2]);
 		Calendar calendar = Calendar.getInstance();
-		calendar.setTime(sdf.parse(stringDate));
-
+		calendar.set(year, month - 1, date);
+		Date eventDate = (Date) calendar.getTime();
 		String eventTime = request.getParameter("eventTime");
 		String location = request.getParameter("location");
 		String description = request.getParameter("description");
