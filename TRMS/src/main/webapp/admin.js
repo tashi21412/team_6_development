@@ -1,27 +1,8 @@
 window.onload = function(){
 	
 	document.getElementById("openNav").addEventListener("click",w3_open, false);
-	document.getElementById("submitForm").addEventListener("click",sendForm,false);
 	
 }
-
-function sendForm(){
-	var mydata={"name":"abc","age":"21"};
-	
-	var xhr = new XMLHttpRequest();
-	 
-	xhr.onreadystatechange = function() {
-		if(xhr.readyState == 4 && xhr.status == 200){
-			console.log(xhr.responseText);
-			
-		}
-	}
-	xhr.open("GET", "localhost:8080/SubmitForm", true);
-	
-	xhr.send(JSON.stringify(mydata));
-}
-	
-
 
 function w3_open() {
   document.getElementById("main").style.marginLeft = "25%";
@@ -39,9 +20,9 @@ function w3_close() {
  $(document).ready(function(){
         $("#enterProfile").click(function(){
             
-            //$("#content").replaceWith(document.getElementById("profile").innerHTML);
           	$("#content").hide();
           	$("#profile").show();
+          	$("#requestNotification").hide();
           	$("#form").hide();
           	w3_close();
           	
@@ -54,6 +35,7 @@ function w3_close() {
         $("#enterForm").click(function(){
             $("#content").hide();
           	$("#profile").hide();
+          	$("#requestNotification").hide();
           	$("#form").show();
           	w3_close();
         });
@@ -63,7 +45,18 @@ function w3_close() {
             $("#content").show();
           	$("#profile").hide();
           	$("#form").hide();
+          	$("#requestNotification").hide();
           	w3_close();
         });
     });
+ 
+ $(document).ready(function(){
+     $("#seeRequests").click(function(){
+         $("#content").hide();
+       	$("#profile").hide();
+       	$("#form").hide();
+       	$("#requestNotification").show();
+       	w3_close();
+     });
+ });
  
