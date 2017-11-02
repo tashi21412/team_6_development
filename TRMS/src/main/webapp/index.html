@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+  	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="index.css">
-    <!--<script src = "index.js"></script>-->
+  	<link rel="stylesheet" href="index.css">
     <meta charset="UTF-8">
-    <title>TRMS System</title>
+    <title>Our Bank App</title>
   </head>
 
   <body>
     <div class = "logincard">
       <div class="w3-container">
-        <h2>Welcome to TRMS</h2>
+        <h2>Welcome to MyBank</h2>
       </div>
 
       <div id="signInPage">
@@ -22,13 +21,21 @@
         <input class="w3-input w3-border w3-light-grey" type="text">
 
         <label class="w3-text-light-grey"><b>Password</b></label>
-        <input class="w3-input w3-border w3-light-grey" type="password">
+        <input class="w3-input w3-border w3-light-grey" type="text">
 
        
 
         <button id="toSignIn" class="w3-btn w3-blue-grey"><a href="homepage.html">Sign In</button>
 
+
+         <button id= "toSignUp" class="w3-btn w3-blue-grey" >Sign Up</button>
+
+      </form>
+    </div>
+    </div>
+
          <button id= "toSignUp" class="w3-btn w3-blue-grey" ><a href = "#">Sign Up</a></button>
+
 
         </form>
       </div>
@@ -36,24 +43,23 @@
       <div id = "signUpPage" hidden ="true">
 
         <form action="RegistrationServlet" method="post" class="w3-container">
-        
-          <label class="w3-text-light-grey"><b>First Name</b></label>
-          <input class="w3-input w3-border w3-light-grey" type="text">
+          
+          <label for="username" class="w3-text-light-grey"><b>Username</b></label>
+          <input class="w3-input w3-border w3-light-grey" type="text" id="username" name="username">
+          
+          <label for="password" class="w3-text-light-grey"><b>Password</b></label>
+          <input class="w3-input w3-border w3-light-grey" type="text" id="password" name="password">  
+                
+          <label for="firstName" class="w3-text-light-grey"><b>First Name</b></label>
+          <input class="w3-input w3-border w3-light-grey" type="text" id="firstName" name="firstName">
 
-          <label class="w3-text-light-grey"><b>Last Name</b></label>
-          <input class="w3-input w3-border w3-light-grey" type="text">
+          <label for="lastName" class="w3-text-light-grey"><b>Last Name</b></label>
+          <input class="w3-input w3-border w3-light-grey" type="text" id="lastName" name="lastName">
+          
+          <label for="email" class="w3-text-light-grey"><b>Email</b></label>
+          <input class="w3-input w3-border w3-light-grey" type="text" id="email" name="email">
 
-          <label class="w3-text-light-grey"><b>New Username</b></label>
-          <input class="w3-input w3-border w3-light-grey" type="text">
-
-          <label class="w3-text-light-grey"><b>Password</b></label>
-          <input id = "password" class="w3-input w3-border w3-light-grey" type="password">
-
-          <label class="w3-text-light-grey"><b>Re-enter Password</b></label>
-          <input id="confirmpassword" class="w3-input w3-border w3-light-grey" type="password">
-
-          <button type= "submit" id ="someotherclass" class="w3-btn w3-blue-grey">Sign Up</button>
-          <p id = "error" hidden = "true"> Your password didn't match</p>
+          <button type="submit" id = "register"class="w3-btn w3-blue-grey">Sign Up</button>
          </form>
 
       </div>
@@ -65,13 +71,20 @@
     
 
     <script>
+
     $(document).ready(function(){
         $("#toSignUp").click(function(){
+
+            
+            $("#signInPage").replaceWith(document.getElementById("signUpPage").innerHTML);
+
             $("#signInPage").hide();
             $("#signUpPage").show(400);
+
           
         });
     });
+
     </script>
   </body>
   

@@ -115,6 +115,7 @@
       <h2>Reimbursement Form</h2>
     </div>
 
+<<<<<<< HEAD
     <form class="w3-container">
       <label for = "eventDate"class="w3-text-teal" ><b>Event Date</b></label>
       <input class="w3-input w3-border w3-light-grey" type="date" placeholder = "$" id = "eventDate" name = "eventDate">
@@ -159,10 +160,103 @@
        <input class="w3-input w3-border w3-light-grey" type="file" name ="file" placeholder = "Reason To Participate">
        
       <button id = "submitForm" class="w3-btn w3-blue-grey attchButton">Submit</button>
+=======
+<form action="FormServlet" method="post" class="w3-container">
+
+     <label for="eventDate" class="w3-text-teal" ><b>Event Date</b></label>
+
+     <input class="w3-input w3-border w3-light-grey" type="date" placeholder = "$" id="eventDate" name="eventDate">
+
+
+
+     <label for="eventTime" class="w3-text-teal" ><b>Event Time</b></label>
+
+     <input class="w3-input w3-border w3-light-grey" type="time" placeholder = "$" id="eventTime" name="eventTime">
+
+
+
+     <label for="location" class="w3-text-teal" ><b>Location</b></label>
+
+     <input class="w3-input w3-border w3-light-grey" type="location" placeholder = "location" id="location" name="location">
+
+
 
      
 
-    </form>
+
+
+     <label for="cost" class="w3-text-teal" ><b>Cost</b></label>
+
+     <input class="w3-input w3-border w3-light-grey" type="text" placeholder = "$" id="cost" name="cost">
+
+
+
+     <label for="description" class="w3-text-teal"><b>Event Description</b></label>
+
+     <input class="w3-input w3-border w3-light-grey" type="text" placeholder = "Description" id="description" name="description">
+
+
+
+     <label for="justification" class="w3-text-teal" style ="height:200px"><b>Justification</b></label>
+
+     <input class="w3-input w3-border w3-light-grey" type="text" placeholder = "Reason To Participate" id="justification" name="justification">
+
+
+
+     <label for="gradingFormat" class="w3-text-teal" ><b>Grading Format</b></label>
+
+     <select class="w3-select" id="gradingFormat" name="gradingFormat">
+
+       <option value="" disabled selected>Choose your option</option>
+
+       <option value="Test/Exam">Test/Exam</option>
+
+       <option value="Presentation">Presentation</option>
+
+       
+
+     </select>
+
+
+
+     <label for="eventType" class="w3-text-teal" ><b>Type of Event</b></label>
+
+     <select class="w3-select" id="eventType" name="eventType">
+
+       <option value="" disabled selected>Choose your option</option>
+
+       <option value="University Cours">University Course</option>
+
+       <option value="Seminar">Seminar</option>
+
+       <option value="Certification Preparation Classes">Certification Preparation Classes</option>
+
+       <option value="Certification">Certification</option>
+
+       <option value="Technical Training">Technical Training</option>
+
+       <option value="Other">Other</option>
+
+     </select>
+
+
+
+      <label class="w3-text-teal" ><b>Attachment</b></label>
+
+      <input class="w3-input w3-border w3-light-grey" type="file" name ="file" placeholder = "Reason To Participate">
+>>>>>>> 94fcc0f15a2481817291925fa6dbc57a99032506
+
+     
+
+     <button type="submit" class="w3-btn w3-blue-grey attchButton">Submit</button>
+
+
+
+   
+
+
+
+   </form>
   </div>
 
 

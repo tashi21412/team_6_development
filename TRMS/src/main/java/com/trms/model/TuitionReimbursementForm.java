@@ -1,54 +1,65 @@
 package com.trms.model;
 
-import java.sql.Time;
-import java.util.Arrays;
-import java.util.Calendar;
+import java.util.Date;
 
 public class TuitionReimbursementForm {
 	
-	private Calendar eventDate;
+	private long formID = 0;
 	
-	private Time eventTime;
+	private Date eventDate = null;
+	
+	private String eventTime = null;
 	
 	private String location = "";
 	
 	private String description = "";
 	
-	private double cost = 0;
+	private double cost = 0.00;
 	
 	private String gradingFormat = "";
 	
 	private String eventType = "";
 	
 	private String justification = "";
-	
-	private String fileExtension = "";
-	
-	private byte[] fileByte;
-	
-	private String approvalAttachment = "";
-	
-	private byte[] emailByte;
-			
-	private long workTimeMissed = 0;
 
 	public TuitionReimbursementForm() {
 		super();
 	}
 
-	public Calendar getEventDate() {
+	public TuitionReimbursementForm(Date eventDate, String eventTime, String location, String description, double cost,
+			String gradingFormat, String eventType, String justification) {
+		super();
+		this.eventDate = eventDate;
+		this.eventTime = eventTime;
+		this.location = location;
+		this.description = description;
+		this.cost = cost;
+		this.gradingFormat = gradingFormat;
+		this.eventType = eventType;
+		this.justification = justification;
+	}
+
+	public long getFormID() {
+		return formID;
+	}
+
+	public void setFormID(long formID) {
+		this.formID = formID;
+	}
+
+	public Date getEventDate() {
 		return eventDate;
 	}
 
-	public void setEventDate(Calendar eventDate) {
+	public void setEventDate(Date eventDate) {
 		this.eventDate = eventDate;
 	}
 
-	public Time getEventTime() {
+	public String getEventTime() {
 		return eventTime;
 	}
 
-	public void setEventTime(Time eventTime) {
+	public void setEventTime(String eventTime) {
 		this.eventTime = eventTime;
 	}
 
@@ -100,53 +111,11 @@ public class TuitionReimbursementForm {
 		this.justification = justification;
 	}
 
-	public String getFileExtension() {
-		return fileExtension;
-	}
-
-	public void setFileExtension(String fileExtension) {
-		this.fileExtension = fileExtension;
-	}
-
-	public byte[] getFileByte() {
-		return fileByte;
-	}
-
-	public void setFileByte(byte[] fileByte) {
-		this.fileByte = fileByte;
-	}
-
-	public String getApprovalAttachment() {
-		return approvalAttachment;
-	}
-
-	public void setApprovalAttachment(String approvalAttachment) {
-		this.approvalAttachment = approvalAttachment;
-	}
-
-	public byte[] getEmailByte() {
-		return emailByte;
-	}
-
-	public void setEmailByte(byte[] emailByte) {
-		this.emailByte = emailByte;
-	}
-
-	public long getWorkTimeMissed() {
-		return workTimeMissed;
-	}
-
-	public void setWorkTimeMissed(long workTimeMissed) {
-		this.workTimeMissed = workTimeMissed;
-	}
-
 	@Override
 	public String toString() {
-		return "TuitionReimbursementForm [eventDate=" + eventDate + ", eventTime=" + eventTime + ", location="
-				+ location + ", description=" + description + ", cost=" + cost + ", gradingFormat=" + gradingFormat
-				+ ", eventType=" + eventType + ", justification=" + justification + ", fileExtension=" + fileExtension
-				+ ", fileByte=" + Arrays.toString(fileByte) + ", approvalAttachment=" + approvalAttachment
-				+ ", emailByte=" + Arrays.toString(emailByte) + ", workTimeMissed=" + workTimeMissed + "]";
+		return "TuitionReimbursementForm [formID=" + formID + ", eventDate=" + eventDate + ", eventTime=" + eventTime
+				+ ", location=" + location + ", description=" + description + ", cost=" + cost + ", gradingFormat="
+				+ gradingFormat + ", eventType=" + eventType + ", justification=" + justification + "]";
 	}
 	
 }

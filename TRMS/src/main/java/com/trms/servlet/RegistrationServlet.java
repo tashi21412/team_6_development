@@ -1,6 +1,8 @@
 package com.trms.servlet;
 
 import java.io.IOException;
+import java.util.Calendar;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -14,10 +16,6 @@ import com.trms.model.User;
 public class RegistrationServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
-	
-    public RegistrationServlet() {
-        super();
-    }
     
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -33,7 +31,9 @@ public class RegistrationServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		String firstName = request.getParameter("firstName");
 		String lastName = request.getParameter("lastName");
-		String role = "Employee";
+		String email = request.getParameter("email");
+		Calendar calendar = Calendar.getInstance();
+		Date hiredDate = (Date) calendar.getTime();
 		Double availableReimbursement = 0.00;
 		
 		User user = new User(
@@ -41,15 +41,15 @@ public class RegistrationServlet extends HttpServlet {
 				password,
 				firstName,
 				lastName,
-				role,
-				availableReimbursement);
+				email,
+				hiredDate,
+				availableReimbursement
+				);
 		
 		UserDAO dao = DAOUtilities.getUserDAO();
 		
 		try {
 			dao.registerAccount(user);
-//			request.getSession().setAttribute("message", "USER ACCOUNT SUCCESSFULLY CREATED");
-//			request.getSession().setAttribute("messageClass", "alert-success");
 			response.sendRedirect("homepage.html");
 		} catch (Exception e) {
 			e.printStackTrace();
