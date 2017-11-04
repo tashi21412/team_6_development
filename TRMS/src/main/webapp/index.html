@@ -8,24 +8,25 @@
     <title>Our Bank App</title>
   </head>
 
-  <body>
+  <body onload="getMessage();">
+  
     <div class = "logincard">
       <div class="w3-container">
         <h2>Welcome to MyBank</h2>
       </div>
 
       <div id="signInPage">
-        <form class="w3-container">
+        <form action="LoginServlet" method="post" class="w3-container">
 
-        <label class="w3-text-light-grey"><b>Username</b></label>
-        <input class="w3-input w3-border w3-light-grey" type="text">
+        <label for="username" class="w3-text-light-grey"><b>Username</b></label>
+        <input class="w3-input w3-border w3-light-grey" type="text" id="username" name="username">
 
-        <label class="w3-text-light-grey"><b>Password</b></label>
-        <input class="w3-input w3-border w3-light-grey" type="text">
+        <label for="password" class="w3-text-light-grey"><b>Password</b></label>
+        <input class="w3-input w3-border w3-light-grey" type="text" id="password" name="password">
 
        
 
-        <button id="toSignIn" class="w3-btn w3-blue-grey"><a href="homepage.html">Sign In</button>
+        <button type = "submit" id="toSignIn" class="w3-btn w3-blue-grey">Sign In</button>
 
 
          <button id= "toSignUp" class="w3-btn w3-blue-grey" >Sign Up</button>
@@ -84,6 +85,7 @@
           
         });
     });
+
 
     </script>
   </body>

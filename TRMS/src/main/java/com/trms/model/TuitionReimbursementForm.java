@@ -21,13 +21,15 @@ public class TuitionReimbursementForm {
 	private String eventType = "";
 	
 	private String justification = "";
+	
+	private String username = "";
 
 	public TuitionReimbursementForm() {
 		super();
 	}
 
 	public TuitionReimbursementForm(Date eventDate, String eventTime, String location, String description, double cost,
-			String gradingFormat, String eventType, String justification) {
+			String gradingFormat, String eventType, String justification, String username) {
 		super();
 		this.eventDate = eventDate;
 		this.eventTime = eventTime;
@@ -37,6 +39,7 @@ public class TuitionReimbursementForm {
 		this.gradingFormat = gradingFormat;
 		this.eventType = eventType;
 		this.justification = justification;
+		this.username = username;
 	}
 
 	public long getFormID() {
@@ -111,11 +114,20 @@ public class TuitionReimbursementForm {
 		this.justification = justification;
 	}
 
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
 	@Override
 	public String toString() {
 		return "TuitionReimbursementForm [formID=" + formID + ", eventDate=" + eventDate + ", eventTime=" + eventTime
 				+ ", location=" + location + ", description=" + description + ", cost=" + cost + ", gradingFormat="
-				+ gradingFormat + ", eventType=" + eventType + ", justification=" + justification + "]";
+				+ gradingFormat + ", eventType=" + eventType + ", justification=" + justification + ", username="
+				+ username + "]";
 	}
 	
 }

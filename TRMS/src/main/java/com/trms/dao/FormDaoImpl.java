@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.trms.model.TuitionReimbursementForm;
 
@@ -21,7 +23,7 @@ public class FormDaoImpl implements FormDAO {
 		
 		try {
 			connection = DAOUtilities.getConnection();
-			String sql = "INSERT INTO TUITIONREIMBURSEMENTFORM VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO TUITIONREIMBURSEMENTFORM VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			stmt = connection.prepareStatement(sql);
 			seqStmt = connection.createStatement();
 			String seqSql = "SELECT FORMIDSEQUENCE.NEXTVAL FROM DUAL";
@@ -38,6 +40,7 @@ public class FormDaoImpl implements FormDAO {
 			stmt.setString(7, trf.getGradingFormat());
 			stmt.setString(8, trf.getEventType());
 			stmt.setString(9, trf.getJustification());
+			stmt.setString(10, trf.getUsername());
 			stmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -53,6 +56,49 @@ public class FormDaoImpl implements FormDAO {
 				e.printStackTrace();
 			}
 		}
+		
+	}
+
+	@Override
+	public List<TuitionReimbursementForm> getAllForms() throws Exception {
+		
+		List<TuitionReimbursementForm> forms = new ArrayList<>();
+		Connection connection = null;
+		Statement stmt = null;
+		
+		try {
+			connection = DAOUtilities.getConnection();
+			stmt = connection.createStatement();
+			String sql = "SELECT * FROM TUITIONREIMBURSEMENTFORM";
+			ResultSet rs = stmt.executeQuery(sql);
+			while(rs.next()) {
+				TuitionReimbursementForm trf = new TuitionReimbursementForm();
+				trf.setFormID(rs.getLong("FORMID"));
+				trf.setEventDate(rs.getDate("EVENTDATE"));
+				trf.setEventTime(rs.getString("EVENTTIME"));
+				trf.setLocation(rs.getString("LOCATION"));
+				trf.setDescription(rs.getString("DESCRIPTION"));
+				trf.setCost(rs.getDouble("COST"));
+				trf.setGradingFormat(rs.getString("GRADINGFORMAT"));
+				trf.setEventType(rs.getString("EVENTTYPE"));
+				trf.setJustification(rs.getString("JUSTIFICATION"));
+				trf.setUsername(rs.getString("USERNAME"));
+				forms.add(trf);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try{
+				if(stmt != null)
+					stmt.close();
+				if(connection != null)
+					connection.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return forms;
 		
 	}
 

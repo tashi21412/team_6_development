@@ -3,8 +3,6 @@ package com.trms.model;
 import java.util.Date;
 
 public class User {
-
-	private long userID = 0;
 	
 	private String username = "";
 	
@@ -24,6 +22,12 @@ public class User {
 		super();
 	}
 
+	public User(String username, String password) {
+		super();
+		this.username = username;
+		this.password = password;
+	}
+
 	public User(String username, String password, String firstName, String lastName, String email, Date hiredDate,
 			double availableReimbursement) {
 		super();
@@ -34,14 +38,6 @@ public class User {
 		this.email = email;
 		this.hiredDate = hiredDate;
 		this.availableReimbursement = availableReimbursement;
-	}
-
-	public long getUserID() {
-		return userID;
-	}
-
-	public void setUserID(long userID) {
-		this.userID = userID;
 	}
 
 	public String getUsername() {
@@ -102,9 +98,9 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [userID=" + userID + ", username=" + username + ", password=" + password + ", firstName="
-				+ firstName + ", lastName=" + lastName + ", email=" + email + ", hiredDate=" + hiredDate
-				+ ", availableReimbursement=" + availableReimbursement + "]";
+		return "User [username=" + username + ", password=" + password + ", firstName=" + firstName + ", lastName="
+				+ lastName + ", email=" + email + ", hiredDate=" + hiredDate + ", availableReimbursement="
+				+ availableReimbursement + "]";
 	}
 		
 }
