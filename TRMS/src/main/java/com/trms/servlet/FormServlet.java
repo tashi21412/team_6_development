@@ -3,14 +3,11 @@ package com.trms.servlet;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Iterator;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.json.JSONObject;
 
 import com.trms.dao.DAOUtilities;
 import com.trms.dao.FormDAO;
@@ -20,36 +17,15 @@ public class FormServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
        
-	
-	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-
 		request.getRequestDispatcher("homepage.jsp").forward(request, response);
-
 		
 	}
 
-	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		try {
-			
-		JSONObject jObj = new JSONObject(request.getReader()); // this parses the json
-		
-		System.out.println(jObj.get("foo").toString()); // get key
-		response.setContentType("text/plain"); // Set content type of the response so that jQuery knows what it can
-		// expect.
-		response.setCharacterEncoding("UTF-8"); // You want world domination, huh?
-		response.getWriter().write(jObj.get("foo").toString());  
-		
-		}
-		catch(Exception e) {
-			e.printStackTrace();
-		}
-
-		
-		/*String stringDate = request.getParameter("eventDate");
+		String stringDate = request.getParameter("eventDate");
 		String[] arrayDate = stringDate.split("/");
 		int date = Integer.parseInt(arrayDate[0]);
 		int month = Integer.parseInt(arrayDate[1]);
@@ -85,7 +61,7 @@ public class FormServlet extends HttpServlet {
 			response.sendRedirect("homepage.jsp");
 		} catch (Exception e) {
 			e.printStackTrace();
-		}		*/
+		}		
 		
 	}
 

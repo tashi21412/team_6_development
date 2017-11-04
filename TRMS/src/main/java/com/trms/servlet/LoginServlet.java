@@ -21,41 +21,20 @@ public class LoginServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		JSONObject jObj = new JSONObject(request.getParameter("loginPerson"));
-		
-		String username = (String) jObj.get("username");
-		String password = (String) jObj.get("password");
+
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
 		
 		User user = new User(
 				username,
-				password);
+				password
+				);
 		
-		
-		response.setContentType("application/json");
-		response.setCharacterEncoding("utf-8");
-		PrintWriter out = response.getWriter();
-		    
-		    
 		UserDAO dao = DAOUtilities.getUserDAO();
-		
 		
 		try {
 			if(dao.loginAccount(user).equals(user)) {
 				request.getSession().setAttribute("username", user.getUsername());
-				
-				JSONObject json = new JSONObject();
-				User anotherUser = dao.getUserInformation(username);
-				
-				json.put("userName", anotherUser.getUsername);
-				json.put("fullName", anotherUser.getFirstName() + " "+ anotherUser.getLastName());
-				json.put("role", anotherUser.getRole());
-				json.put("availableReimbursement", anotherUser.getAvailableReimbursement);
-
-				// finally output the json string
-				out.print(json.toString());
-				
-				
 				response.sendRedirect("homepage.jsp");
 			}
 		} catch (Exception e) {

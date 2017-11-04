@@ -1,31 +1,8 @@
 window.onload = function(){
 	
 	document.getElementById("openNav").addEventListener("click",w3_open, false);
-	document.getElementById("submitForm").addEventListener("click",sendForm,false);
 	
 }
-
-function sendForm(){
-	var data = {
-		    foo: "fooValue",
-		    bar: "barValue",
-		    baz: "bazValue"
-		};
-
-		$.ajax({
-		    type: "POST",
-		    url: "localhost:8080/TRMS/FormServlet/",
-		    contentType: "application/json", // NOT dataType!
-		    data: JSON.stringify(data),
-		    success: function(response) {
-		        // ...
-		    		console.log("Success");
-		    }
-
-		});
-}
-	
-
 
 function w3_open() {
   document.getElementById("main").style.marginLeft = "25%";
