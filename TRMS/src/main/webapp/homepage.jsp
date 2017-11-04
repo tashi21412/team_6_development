@@ -56,7 +56,7 @@
     <div class="w3-card-4">
       <img src="profile_sub.png" alt="Profile">
       <div id="userinfo" class="w3-container w3-center">
-        <p>Name: User's Name</p>
+        <h1 id = "profileName"> Name: Name </h1>
       </div>
 
     </div>
@@ -205,6 +205,7 @@
 
 
 <script src="homepage.js"></script>
+<script src= "index.js"></script>
 
 
 

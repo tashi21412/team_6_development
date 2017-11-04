@@ -79,5 +79,25 @@ public class UserDaoImpl implements UserDAO {
 		return existUser;
 		
 	}
+	
+	@Override 
+	public User userInformation(String username) throws Exception {
+		Connection connection = null;
+		PreparedStatement stmt = null;
+		User currentUserInformation = null;
+		
+		try {
+			connection = DAOUtilities.getConnection();
+			String sql = "SELECT * FROM USERS WHERE USERNAME = ?";
+			stmt = connection.prepareStatement(sql);
+			stmt.setString(1, user.getUsername());
+			ResultSet rs = stmt.executeQuery();
+			
+			currentUserInformation = new User (rs.getString(1), rs.getString(2),rs.getString(3), rs.getString(4),rs.getString(5),rs.getInt(6));
+		}
+		catch (Exception e) {
+			e.printStack();
+		}
+	}
 
 }

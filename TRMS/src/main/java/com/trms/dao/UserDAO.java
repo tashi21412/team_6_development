@@ -8,7 +8,7 @@ public interface UserDAO {
 	
 	User loginAccount(User user) throws Exception;
 
+	User information(String username) throws Exception;
 	
-	//to submit a form
 	
 }
