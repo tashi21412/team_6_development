@@ -19,16 +19,11 @@ public class ViewFormsServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		FormDAO dao = DAOUtilities.getFormDAO();
-		List<TuitionReimbursementForm> forms = null;
-		try {
-			forms = dao.getAllForms();
-			System.out.println("test");
-			request.getSession().setAttribute("forms", forms);
-			request.getRequestDispatcher("homepage.jsp").forward(request, response);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		String username = (String) request.getSession().getAttribute("username");
+		List<TuitionReimbursementForm> forms = dao.getAllForms(username);
+		System.out.println(forms);
+		request.getSession().setAttribute("forms", forms);
+		request.getRequestDispatcher("profile.jsp").forward(request, response);
 
 	}
 

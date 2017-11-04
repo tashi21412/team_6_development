@@ -11,14 +11,12 @@
   </head>
 
   <body>
-  	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+
   
    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
 
     <a href="#" id="home"class="w3-bar-item w3-button"><i class="material-icons">home</i>Home</a>
-    <a href= "#" id="enterProfile"class="w3-bar-item w3-button"><i class="material-icons">person</i>Profile </a>
+    <a href= "ViewFormsServlet" class="w3-bar-item w3-button"><i class="material-icons">person</i>Profile </a>
     <a href="#" id="enterForm" class="w3-bar-item w3-button"><i class="material-icons">content_paste</i>Reimbursement Form</a>
     <a href="index.html" id="Log Out"class="w3-bar-item w3-button"><i class="material-icons">exit_to_app</i>Log Out</a>
     </div>
@@ -51,29 +49,28 @@
       Aliquam blandit commodo enim in aliquet. Praesent sed dui odio. Integer a finibus ante. Morbi vitae velit non purus semper commodo ut sit amet enim. Nunc faucibus felis massa, vel hendrerit nisl dapibus at. In enim sem, condimentum non eros vel, placerat viverra nulla. Integer viverra egestas rutrum. Pellentesque ut egestas nunc. Donec lobortis, mi quis commodo aliquam, sapien nisi scelerisque nibh, eu consequat nisi arcu a dolor. Nunc ac efficitur libero. Suspendisse a ultricies odio. Nulla consectetur, metus eu vestibulum molestie, neque dui fermentum nibh, vitae eleifend ligula libero id leo. Phasellus vel sapien at neque auctor ornare dignissim placerat justo.</p>
       </div>
   </div>
-
+<!--
   <div id = "profile" hidden = "true">
     <div class="w3-card-4">
       <img src="profile_sub.png" alt="Profile">
       <div id="userinfo" class="w3-container w3-center">
         <p>Name: User's Name</p>
       </div>
-
     </div>
-<form action="ViewFormsServlet" method="get" class="w3-container">
     <h2>Reimbursement History</h2>
     <div class="w3-responsive">
+    <form action="ViewFormsServlet" method="get" class="w3-container">
       <table class="w3-table-all">
       <thead>
       <tr>
-       <!--  <th>Event Date</th>
+        <th>Event Date</th>
         <th>Event Time</th>
-        -->
+
         <th>Location</th>
         <th>Description</th>
-        <!--  
+         
         <th>Cost</th>
-        -->
+       
         <th>Grading Format</th>
         <th>Event Type</th>
         <th>Justification</th>
@@ -82,14 +79,14 @@
 	<tbody>
 					<c:forEach var="form" items="${forms}">
 					<tr>
-						<!-- <td><c:out value="${form.eventDate}" /></td>
+					    <td><c:out value="${form.eventDate}" /></td>
 						
-						<td><c:out value="${form.eventTime}" /></td> -->
+						<td><c:out value="${form.eventTime}" /></td>
 						<td><c:out value="${form.location}" /></td>
 						<td><c:out value="${form.description}" /></td>
-						<!--  
+						 
 						<td><c:out value="${form.cost}" /></td>
-						-->
+						
 						<td><c:out value="${form.gradingFormat}" /></td>
 						<td><c:out value="${form.eventType}" /></td>
 						<td><c:out value="${form.justification}" /></td>
@@ -104,7 +101,7 @@
     </div>
 
   </div>
-
+-->
   <div id= "form" hidden="true">
     <div class="w3-container">
       <h2>Reimbursement Form</h2>

@@ -60,43 +60,43 @@ public class FormDaoImpl implements FormDAO {
 	}
 
 	@Override
-	public List<TuitionReimbursementForm> getAllForms() throws Exception {
+	public List<TuitionReimbursementForm> getAllForms(String username) {
 		
 		List<TuitionReimbursementForm> forms = new ArrayList<>();
 		Connection connection = null;
 		Statement stmt = null;
-		
-		try {
-			connection = DAOUtilities.getConnection();
-			stmt = connection.createStatement();
-			String sql = "SELECT * FROM TUITIONREIMBURSEMENTFORM";
-			ResultSet rs = stmt.executeQuery(sql);
-			while(rs.next()) {
-				TuitionReimbursementForm trf = new TuitionReimbursementForm();
-				trf.setFormID(rs.getLong("FORMID"));
-				trf.setEventDate(rs.getDate("EVENTDATE"));
-				trf.setEventTime(rs.getString("EVENTTIME"));
-				trf.setLocation(rs.getString("LOCATION"));
-				trf.setDescription(rs.getString("DESCRIPTION"));
-				trf.setCost(rs.getDouble("COST"));
-				trf.setGradingFormat(rs.getString("GRADINGFORMAT"));
-				trf.setEventType(rs.getString("EVENTTYPE"));
-				trf.setJustification(rs.getString("JUSTIFICATION"));
-				trf.setUsername(rs.getString("USERNAME"));
-				forms.add(trf);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			try{
-				if(stmt != null)
-					stmt.close();
-				if(connection != null)
-					connection.close();
+
+			try {
+				connection = DAOUtilities.getConnection();
+				stmt = connection.createStatement();
+				String sql = "SELECT * FROM TUITIONREIMBURSEMENTFORM WHERE USERNAME = '" + username + "'";
+				ResultSet rs = stmt.executeQuery(sql);
+				while(rs.next()) {
+					TuitionReimbursementForm trf = new TuitionReimbursementForm();
+					trf.setFormID(rs.getLong("FORMID"));
+					trf.setEventDate(rs.getDate("EVENTDATE"));
+					trf.setEventTime(rs.getString("EVENTTIME"));
+					trf.setLocation(rs.getString("LOCATION"));
+					trf.setDescription(rs.getString("DESCRIPTION"));
+					trf.setCost(rs.getDouble("COST"));
+					trf.setGradingFormat(rs.getString("GRADINGFORMAT"));
+					trf.setEventType(rs.getString("EVENTTYPE"));
+					trf.setJustification(rs.getString("JUSTIFICATION"));
+					trf.setUsername(rs.getString("USERNAME"));
+					forms.add(trf);
+				}
 			} catch (SQLException e) {
 				e.printStackTrace();
+			} finally {
+				try {
+					if(stmt != null)
+						stmt.close();
+					if(connection != null)
+						connection.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
 			}
-		}
 		
 		return forms;
 		

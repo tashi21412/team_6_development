@@ -8,6 +8,6 @@ public interface FormDAO {
 
 	void createForm(TuitionReimbursementForm trf) throws Exception;
 	
-	List<TuitionReimbursementForm> getAllForms() throws Exception;
+	List<TuitionReimbursementForm> getAllForms(String username);
 	
 }
