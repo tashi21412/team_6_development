@@ -55,6 +55,9 @@ $(document).ready(function(){
     			if(xhr.status == 200){
     				
     				alert("You are signed up");
+    				$("#signUpPage").hide();
+    				$("#signInPage").hide();
+    				
     				
     			}
     			

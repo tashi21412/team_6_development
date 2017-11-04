@@ -11,7 +11,10 @@
   </head>
 
   <body>
-
+  	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+  
    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
 
     <a href="#" id="home"class="w3-bar-item w3-button"><i class="material-icons">home</i>Home</a>
@@ -57,55 +60,47 @@
       </div>
 
     </div>
-
+<form action="ViewFormsServlet" method="get" class="w3-container">
     <h2>Reimbursement History</h2>
     <div class="w3-responsive">
       <table class="w3-table-all">
+      <thead>
       <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Points</th>
-        <th>Points</th>
-        <th>Points</th>
-        <th>Points</th>
-        <th>Points</th>
-        <th>Points</th>
-        <th>Points</th>
+       <!--  <th>Event Date</th>
+        <th>Event Time</th>
+        -->
+        <th>Location</th>
+        <th>Description</th>
+        <!--  
+        <th>Cost</th>
+        -->
+        <th>Grading Format</th>
+        <th>Event Type</th>
+        <th>Justification</th>
       </tr>
-      <tr>
-        <td>Jill</td>
-        <td>Smith</td>
-        <td>50</td>
-        <td>50</td>
-        <td>50</td>
-        <td>50</td>
-        <td>50</td>
-        <td>50</td>
-        <td>50</td>
-      </tr>
-      <tr>
-        <td>Eve</td>
-        <td>Jackson</td>
-        <td>94</td>
-        <td>94</td>
-        <td>94</td>
-        <td>94</td>
-        <td>94</td>
-        <td>94</td>
-        <td>94</td>
-      </tr>
-      <tr>
-        <td>Adam</td>
-        <td>Johnson</td>
-        <td>67</td>
-        <td>67</td>
-        <td>67</td>
-        <td>67</td>
-        <td>67</td>
-        <td>67</td>
-        <td>67</td>
-      </tr>
+	</thead>
+	<tbody>
+					<c:forEach var="form" items="${forms}">
+					<tr>
+						<!-- <td><c:out value="${form.eventDate}" /></td>
+						
+						<td><c:out value="${form.eventTime}" /></td> -->
+						<td><c:out value="${form.location}" /></td>
+						<td><c:out value="${form.description}" /></td>
+						<!--  
+						<td><c:out value="${form.cost}" /></td>
+						-->
+						<td><c:out value="${form.gradingFormat}" /></td>
+						<td><c:out value="${form.eventType}" /></td>
+						<td><c:out value="${form.justification}" /></td>
+						
+			
+				
+					</tr>
+				</c:forEach>
+	</tbody>
       </table>
+       </form>
     </div>
 
   </div>

@@ -32,6 +32,7 @@ public class RegistrationServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+<<<<<<< HEAD
 		try {
 			
 			System.out.println(request.getParameter("person"));
@@ -49,6 +50,16 @@ public class RegistrationServlet extends HttpServlet {
 			String lastName = (String) jObj.get("lastName");
 			String email= (String) jObj.get("email");
 			double availableReimbursement = 1000.0;
+=======
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		String firstName = request.getParameter("firstName");
+		String lastName = request.getParameter("lastName");
+		String email = request.getParameter("email");
+		Calendar calendar = Calendar.getInstance();
+		Date hiredDate = (Date) calendar.getTime();
+		Double availableReimbursement = 1000.00;
+>>>>>>> 7554cb9f0b865a1afaa9d26b80c5040ffbeb07f9
 		
 		User user = new User(
 				username,
@@ -63,8 +74,14 @@ public class RegistrationServlet extends HttpServlet {
 		UserDAO dao = DAOUtilities.getUserDAO();
 		dao.registerAccount(user);
 		
+<<<<<<< HEAD
 		
 			
+=======
+		try {
+			dao.registerAccount(user);
+			response.sendRedirect("index.html");
+>>>>>>> 7554cb9f0b865a1afaa9d26b80c5040ffbeb07f9
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -32,6 +32,30 @@
   <servlet-mapping>
     <servlet-name>FormServlet</servlet-name>
     <url-pattern>/FormServlet</url-pattern>
+<<<<<<< HEAD
   </servlet-mapping>  
 
+=======
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LoginServlet</display-name>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.trms.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ViewFormsServlet</display-name>
+    <servlet-name>ViewFormsServlet</servlet-name>
+    <servlet-class>com.trms.servlet.ViewFormsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewFormsServlet</servlet-name>
+    <url-pattern>/ViewFormsServlet</url-pattern>
+  </servlet-mapping>
+>>>>>>> 7554cb9f0b865a1afaa9d26b80c5040ffbeb07f9
 </web-app>

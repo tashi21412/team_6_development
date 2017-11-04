@@ -8,24 +8,34 @@
     <title>Our Bank App</title>
   </head>
 
+<<<<<<< HEAD
  <body>
+=======
+  <body onload="getMessage();">
+  
+>>>>>>> 7554cb9f0b865a1afaa9d26b80c5040ffbeb07f9
     <div class = "logincard">
       <div class="w3-container">
         <h2>Welcome to TRMS</h2>
       </div>
 
       <div id="signInPage">
-        <form class="w3-container">
+        <form action="LoginServlet" method="post" class="w3-container">
 
-        <label class="w3-text-light-grey"><b>Username</b></label>
-        <input class="w3-input w3-border w3-light-grey" type="text">
+        <label for="username" class="w3-text-light-grey"><b>Username</b></label>
+        <input class="w3-input w3-border w3-light-grey" type="text" id="username" name="username">
 
+<<<<<<< HEAD
         <label class="w3-text-light-grey"><b>Password</b></label>
         <input class="w3-input w3-border w3-light-grey" type="password">
+=======
+        <label for="password" class="w3-text-light-grey"><b>Password</b></label>
+        <input class="w3-input w3-border w3-light-grey" type="text" id="password" name="password">
+>>>>>>> 7554cb9f0b865a1afaa9d26b80c5040ffbeb07f9
 
        
 
-        <button id="toSignIn" class="w3-btn w3-blue-grey"><a href="homepage.html">Sign In</button>
+        <button type = "submit" id="toSignIn" class="w3-btn w3-blue-grey">Sign In</button>
 
          <button id= "toSignUp" class="w3-btn w3-blue-grey" ><a href = "#">Sign Up</a></button>
 
@@ -72,6 +82,11 @@
           
         });
     });
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 7554cb9f0b865a1afaa9d26b80c5040ffbeb07f9
     </script>
     <script src="index.js"></script>
   </body>

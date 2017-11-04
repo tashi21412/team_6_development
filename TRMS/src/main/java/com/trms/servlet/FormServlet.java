@@ -24,7 +24,11 @@ public class FormServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+<<<<<<< HEAD
 		 
+=======
+		request.getRequestDispatcher("homepage.jsp").forward(request, response);
+>>>>>>> 7554cb9f0b865a1afaa9d26b80c5040ffbeb07f9
 		
 	}
 
@@ -62,6 +66,7 @@ public class FormServlet extends HttpServlet {
 		String gradingFormat = request.getParameter("gradingFormat");
 		String eventType = request.getParameter("eventType");
 		String justification = request.getParameter("justification");
+		String username = (String) request.getSession().getAttribute("username");
 		
 		TuitionReimbursementForm trf = new TuitionReimbursementForm(
 				eventDate,
@@ -71,14 +76,15 @@ public class FormServlet extends HttpServlet {
 				cost,
 				gradingFormat,
 				eventType,
-				justification
+				justification,
+				username
 				);
 		
 		FormDAO dao = DAOUtilities.getFormDAO();
 		
 		try {
 			dao.createForm(trf);
-			response.sendRedirect("homepage.html");
+			response.sendRedirect("homepage.jsp");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}		*/
