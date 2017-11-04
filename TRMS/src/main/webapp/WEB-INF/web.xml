@@ -29,14 +29,13 @@
     <servlet-name>FormServlet</servlet-name>
     <servlet-class>com.trms.servlet.FormServlet</servlet-class>
   </servlet>
+  
   <servlet-mapping>
     <servlet-name>FormServlet</servlet-name>
     <url-pattern>/FormServlet</url-pattern>
-<<<<<<< HEAD
-  </servlet-mapping>  
 
-=======
   </servlet-mapping>
+  
   <servlet>
     <description></description>
     <display-name>LoginServlet</display-name>
@@ -57,5 +56,5 @@
     <servlet-name>ViewFormsServlet</servlet-name>
     <url-pattern>/ViewFormsServlet</url-pattern>
   </servlet-mapping>
->>>>>>> 7554cb9f0b865a1afaa9d26b80c5040ffbeb07f9
+
 </web-app>

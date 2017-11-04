@@ -24,11 +24,9 @@ public class FormServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-<<<<<<< HEAD
-		 
-=======
+
 		request.getRequestDispatcher("homepage.jsp").forward(request, response);
->>>>>>> 7554cb9f0b865a1afaa9d26b80c5040ffbeb07f9
+
 		
 	}
 
