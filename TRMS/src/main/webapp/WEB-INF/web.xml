@@ -22,9 +22,7 @@
     <url-pattern>/RegistrationServlet</url-pattern>
    
   </servlet-mapping>
-<<<<<<< HEAD
-   
-=======
+
   <servlet>
     <description></description>
     <display-name>FormServlet</display-name>
@@ -35,5 +33,5 @@
     <servlet-name>FormServlet</servlet-name>
     <url-pattern>/FormServlet</url-pattern>
   </servlet-mapping>  
->>>>>>> 94fcc0f15a2481817291925fa6dbc57a99032506
+
 </web-app>

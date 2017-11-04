@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.JSONObject;
+
+
 import com.trms.dao.DAOUtilities;
 import com.trms.dao.UserDAO;
 import com.trms.model.User;
@@ -20,21 +23,32 @@ public class RegistrationServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		request.getRequestDispatcher("index.html").forward(request, response);
+		//request.getRequestDispatcher("index.html").forward(request, response);
+		
+		response.getWriter().print("I am here");
 		
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String username = request.getParameter("username");
-		String password = request.getParameter("password");
-		String firstName = request.getParameter("firstName");
-		String lastName = request.getParameter("lastName");
-		String email = request.getParameter("email");
-		Calendar calendar = Calendar.getInstance();
-		Date hiredDate = (Date) calendar.getTime();
-		Double availableReimbursement = 0.00;
+		try {
+			
+			System.out.println(request.getParameter("person"));
+			
+			//System.out.println(person);
+			JSONObject jObj = new JSONObject(request.getParameter("person"));
+			
+			System.out.println(jObj.get("firstName"));
+			Calendar calendar = Calendar.getInstance();
+			Date hiredDate = (Date) calendar.getTime();
+			
+			String username = (String) jObj.get("username");
+			String password = (String) jObj.get("password");
+			String firstName = (String) jObj.get("firstName");
+			String lastName = (String) jObj.get("lastName");
+			String email= (String) jObj.get("email");
+			double availableReimbursement = 1000.0;
 		
 		User user = new User(
 				username,
@@ -47,10 +61,10 @@ public class RegistrationServlet extends HttpServlet {
 				);
 		
 		UserDAO dao = DAOUtilities.getUserDAO();
+		dao.registerAccount(user);
 		
-		try {
-			dao.registerAccount(user);
-			response.sendRedirect("homepage.html");
+		
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

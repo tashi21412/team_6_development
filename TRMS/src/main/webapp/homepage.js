@@ -6,19 +6,23 @@ window.onload = function(){
 }
 
 function sendForm(){
-	var mydata={"name":"abc","age":"21"};
-	
-	var xhr = new XMLHttpRequest();
-	 
-	xhr.onreadystatechange = function() {
-		if(xhr.readyState == 4 && xhr.status == 200){
-			console.log(xhr.responseText);
-			
-		}
-	}
-	xhr.open("GET", "localhost:8080/SubmitForm", true);
-	
-	xhr.send(JSON.stringify(mydata));
+	var data = {
+		    foo: "fooValue",
+		    bar: "barValue",
+		    baz: "bazValue"
+		};
+
+		$.ajax({
+		    type: "POST",
+		    url: "localhost:8080/TRMS/FormServlet/",
+		    contentType: "application/json", // NOT dataType!
+		    data: JSON.stringify(data),
+		    success: function(response) {
+		        // ...
+		    		console.log("Success");
+		    }
+
+		});
 }
 	
 

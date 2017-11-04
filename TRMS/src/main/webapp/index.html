@@ -8,10 +8,10 @@
     <title>Our Bank App</title>
   </head>
 
-  <body>
+ <body>
     <div class = "logincard">
       <div class="w3-container">
-        <h2>Welcome to MyBank</h2>
+        <h2>Welcome to TRMS</h2>
       </div>
 
       <div id="signInPage">
@@ -21,45 +21,42 @@
         <input class="w3-input w3-border w3-light-grey" type="text">
 
         <label class="w3-text-light-grey"><b>Password</b></label>
-        <input class="w3-input w3-border w3-light-grey" type="text">
+        <input class="w3-input w3-border w3-light-grey" type="password">
 
        
 
         <button id="toSignIn" class="w3-btn w3-blue-grey"><a href="homepage.html">Sign In</button>
 
-
-         <button id= "toSignUp" class="w3-btn w3-blue-grey" >Sign Up</button>
-
-      </form>
-    </div>
-    </div>
-
          <button id= "toSignUp" class="w3-btn w3-blue-grey" ><a href = "#">Sign Up</a></button>
-
 
         </form>
       </div>
 
       <div id = "signUpPage" hidden ="true">
 
-        <form action="RegistrationServlet" method="post" class="w3-container">
-          
-          <label for="username" class="w3-text-light-grey"><b>Username</b></label>
-          <input class="w3-input w3-border w3-light-grey" type="text" id="username" name="username">
-          
-          <label for="password" class="w3-text-light-grey"><b>Password</b></label>
-          <input class="w3-input w3-border w3-light-grey" type="text" id="password" name="password">  
-                
-          <label for="firstName" class="w3-text-light-grey"><b>First Name</b></label>
-          <input class="w3-input w3-border w3-light-grey" type="text" id="firstName" name="firstName">
+        <form id = "register"class="w3-container">
+        
+          <label class="w3-text-light-grey"><b>First Name</b></label>
+          <input id ="firstName" class="w3-input w3-border w3-light-grey" type="text"/>
 
-          <label for="lastName" class="w3-text-light-grey"><b>Last Name</b></label>
-          <input class="w3-input w3-border w3-light-grey" type="text" id="lastName" name="lastName">
+          <label class="w3-text-light-grey"><b>Last Name</b></label>
+          <input id = "lastName" class="w3-input w3-border w3-light-grey" type="text"/>
           
-          <label for="email" class="w3-text-light-grey"><b>Email</b></label>
-          <input class="w3-input w3-border w3-light-grey" type="text" id="email" name="email">
+          <label class="w3-text-light-grey"><b> Enter Email</b></label>
+          <input id="email" class="w3-input w3-border w3-light-grey" type="text"/>
 
-          <button type="submit" id = "register"class="w3-btn w3-blue-grey">Sign Up</button>
+          <label class="w3-text-light-grey"><b>New Username</b></label>
+          <input id = "username" class="w3-input w3-border w3-light-grey" type="text"/>
+
+          <label class="w3-text-light-grey"><b>Password</b></label>
+          <input id = "password" class="w3-input w3-border w3-light-grey" type="password"/>
+
+          <label class="w3-text-light-grey"><b>Re-enter Password</b></label>
+          <input id="confirmpassword" class="w3-input w3-border w3-light-grey" type="password"/>
+
+          <button  type ="submit" > Sign Up</button>
+          
+          <p id = "error" hidden = "true"> Your password didn't match</p>
          </form>
 
       </div>
@@ -67,25 +64,16 @@
     </div>
 
 
-
-    
-
-    <script>
-
+ <script>
     $(document).ready(function(){
         $("#toSignUp").click(function(){
-
-            
-            $("#signInPage").replaceWith(document.getElementById("signUpPage").innerHTML);
-
             $("#signInPage").hide();
             $("#signUpPage").show(400);
-
           
         });
     });
-
     </script>
+    <script src="index.js"></script>
   </body>
   
 </html>

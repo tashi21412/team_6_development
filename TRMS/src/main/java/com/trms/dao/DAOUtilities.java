@@ -6,19 +6,15 @@ import java.sql.SQLException;
 
 public class DAOUtilities {
 
-<<<<<<< HEAD
+
 
 	// groupproj1.c7bgoxp8ztvz.us-east-2.rds.amazonaws.com
 
-	private static final String url = "jdbc:oracle:thin:@groupproj1.c7bgoxp8ztvz.us-east-2.rds.amazonaws.com:1521:ORCL";
-	private static final String connectionUsername = "medalistrelles";
-	private static final String connectionPassword = "mypassword";
 
-=======
-	private static final String url = "jdbc:oracle:thin:@wilsondbinstance.cfmx8fx4enfy.us-west-2.rds.amazonaws.com:1521:ORCL";
-	private static final String connectionUsername = "wzhong21";
-	private static final String connectionPassword = "oracleSQL";
->>>>>>> 94fcc0f15a2481817291925fa6dbc57a99032506
+	private static final String url = "jdbc:oracle:thin:@mydatabase.caado1dqwhw6.us-west-2.rds.amazonaws.com:1521:ORCL";
+	private static final String connectionUsername = "chinook";
+	private static final String connectionPassword = "Jampa21412";
+
 	
 	private static Connection connection = null;
 	

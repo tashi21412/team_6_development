@@ -21,23 +21,26 @@ public class UserDaoImpl implements UserDAO {
 		
 		try {
 			connection = DAOUtilities.getConnection();
-			String sql = "INSERT INTO USERS VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+			
+			String sql = "INSERT INTO USERS VALUES (?, ?, ?, ?, ?, ?)";
 			stmt = connection.prepareStatement(sql);
 			seqStmt = connection.createStatement();
 			String seqSql = "SELECT USERIDSEQUENCE.NEXTVAL FROM DUAL";
 			ResultSet rs = seqStmt.executeQuery(seqSql);
-			if(rs.next())
+			
+			if(rs.next()) 
 				userIdSeq = rs.getLong(1);
-			stmt.setLong(1, userIdSeq);
-			stmt.setString(2, user.getUsername());
-			stmt.setString(3, user.getPassword());
-			stmt.setString(4, user.getFirstName());
-			stmt.setString(5, user.getLastName());
-			stmt.setString(6, user.getEmail());
-			Date sqlDate = new Date(user.getHiredDate().getTime());
-			stmt.setDate(7, sqlDate);
-			stmt.setDouble(8, user.getAvailableReimbursement());
-			stmt.executeUpdate();
+			
+				stmt.setString(1, user.getUsername());
+				stmt.setString(2, user.getPassword());
+				stmt.setString(3, user.getFirstName());
+				stmt.setString(4, user.getLastName());
+				stmt.setString(5, user.getEmail());
+			
+				stmt.setDouble(6, user.getAvailableReimbursement());
+			
+				stmt.executeUpdate();
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
