@@ -11,12 +11,24 @@
     	<version>2.5</version>
     	<scope>provided</scope>
 	</dependency>
+<<<<<<< HEAD
+	
+	<!-- https://mvnrepository.com/artifact/org.json/json -->
+	<dependency>
+	    <groupId>org.json</groupId>
+	    <artifactId>json</artifactId>
+	    <version>20170516</version>
+	</dependency>
+
+=======
 	<dependency>
     	<groupId>javax.servlet</groupId>
     	<artifactId>jstl</artifactId>
     	<version>1.2</version>
 	</dependency>	
+>>>>>>> 7554cb9f0b865a1afaa9d26b80c5040ffbeb07f9
   </dependencies>
+  
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>

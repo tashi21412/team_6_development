@@ -7,7 +7,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <meta charset="UTF-8">
-    <title>Homepage</title>
+    <title>Admin page</title>
   </head>
 
   <body>
@@ -17,6 +17,7 @@
     <a href="#" id="home"class="w3-bar-item w3-button"><i class="material-icons">home</i>Home</a>
     <a href= "#" id="enterProfile"class="w3-bar-item w3-button"><i class="material-icons">person</i>Profile </a>
     <a href="#" id="enterForm" class="w3-bar-item w3-button"><i class="material-icons">content_paste</i>Reimbursement Form</a>
+ 	<a href="#" id="seeRequests" class="w3-bar-item w3-button"><i class="material-icons">error_outline</i>Reimbursement Requests</a>
     <a href="index.html" id="Log Out"class="w3-bar-item w3-button"><i class="material-icons">exit_to_app</i>Log Out</a>
     </div>
 
@@ -109,6 +110,58 @@
     </div>
 
   </div>
+<div id = "requestNotification" hidden = "true">
+   <h2>Reimbursement Request</h2>
+    <div class="w3-responsive">
+      <table class="w3-table-all">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Points</th>
+        <th>Points</th>
+        <th>Points</th>
+        <th>Points</th>
+        <th>Points</th>
+        <th>Points</th>
+        <th>Points</th>
+      </tr>
+      <tr>
+        <td>Jill</td>
+        <td>Smith</td>
+        <td>50</td>
+        <td>50</td>
+        <td>50</td>
+        <td>50</td>
+        <td>50</td>
+        <td>50</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+        <td>Jackson</td>
+        <td>94</td>
+        <td>94</td>
+        <td>94</td>
+        <td>94</td>
+        <td>94</td>
+        <td>94</td>
+        <td>94</td>
+      </tr>
+      <tr>
+        <td>Adam</td>
+        <td>Johnson</td>
+        <td>67</td>
+        <td>67</td>
+        <td>67</td>
+        <td>67</td>
+        <td>67</td>
+        <td>67</td>
+        <td>67</td>
+      </tr>
+      </table>
+    </div>
+
+  </div>
 
   <div id= "form" hidden="true">
     <div class="w3-container">
@@ -116,17 +169,6 @@
     </div>
 
     <form class="w3-container">
-      <label for = "eventDate"class="w3-text-teal" ><b>Event Date</b></label>
-      <input class="w3-input w3-border w3-light-grey" type="date" placeholder = "$" id = "eventDate" name = "eventDate">
-
-      <label class="w3-text-teal" ><b>Event Time</b></label>
-      <input class="w3-input w3-border w3-light-grey" type="time" placeholder = "$">
-
-      <label class="w3-text-teal" ><b>Location</b></label>
-      <input class="w3-input w3-border w3-light-grey" type="location" placeholder = "location">
-
-      
-
       <label class="w3-text-teal" ><b>Cost</b></label>
       <input class="w3-input w3-border w3-light-grey" type="text" placeholder = "$">
 
@@ -136,15 +178,8 @@
       <label class="w3-text-teal" style ="height:200px"><b>Justification</b></label>
       <input class="w3-input w3-border w3-light-grey" type="text" placeholder = "Reason To Participate">
 
-      <label class="w3-text-teal" ><b>Grading Format</b></label>
-      <select class="w3-select" name="option">
-        <option value="" disabled selected>Choose your option</option>
-        <option value="1">Test/Exam</option>
-        <option value="2">Presentation</option>
-        
-      </select>
 
-      <label class="w3-text-teal" ><b>Type of Event</b></label>
+      <label class="w3-text-teal" ><b>Justification</b></label>
       <select class="w3-select" name="option">
         <option value="" disabled selected>Choose your option</option>
         <option value="1">University Course</option>
@@ -169,11 +204,7 @@
   </div>
 
 
-<script src="homepage.js"></script>
-
-
-
-
-  </body>
+	<script src="admin.js"></script>
+ </body>
   
 </html>

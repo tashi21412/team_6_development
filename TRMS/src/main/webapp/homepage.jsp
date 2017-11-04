@@ -54,7 +54,7 @@
     <div class="w3-card-4">
       <img src="profile_sub.png" alt="Profile">
       <div id="userinfo" class="w3-container w3-center">
-        <p>Name: User's Name</p>
+        <h1 id = "profileName"> Name: Name </h1>
       </div>
     </div>
     <h2>Reimbursement History</h2>
@@ -107,7 +107,9 @@
       <h2>Reimbursement Form</h2>
     </div>
 
-<form action="FormServlet" method="post" class="w3-container">
+
+
+<form class="w3-container">
 
      <label for="eventDate" class="w3-text-teal" ><b>Event Date</b></label>
 
@@ -191,17 +193,8 @@
 
       <input class="w3-input w3-border w3-light-grey" type="file" name ="file" placeholder = "Reason To Participate">
 
-     
-
-     <button type="submit" class="w3-btn w3-blue-grey attchButton">Submit</button>
-
-
-
-   
-
-
-
-   </form>
+	 <button id="submitForm" class="w3-btn w3-blue-grey attchButton">Submit</button>
+	 </form>
   </div>
 
 
@@ -209,6 +202,7 @@
 
 
 <script src="homepage.js"></script>
+<script src= "index.js"></script>
 
 
 
