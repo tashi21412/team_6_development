@@ -8,7 +8,7 @@ public class TuitionReimbursementForm {
 	
 	private Date eventDate = null;
 	
-	private String eventTime = null;
+	private String eventTime = "";
 	
 	private String location = "";
 	
@@ -23,13 +23,17 @@ public class TuitionReimbursementForm {
 	private String justification = "";
 	
 	private String username = "";
+	
+	private String status = "";
+	
+	private String grade = null;
 
 	public TuitionReimbursementForm() {
 		super();
 	}
 
 	public TuitionReimbursementForm(Date eventDate, String eventTime, String location, String description, double cost,
-			String gradingFormat, String eventType, String justification, String username) {
+			String gradingFormat, String eventType, String justification, String username, String status) {
 		super();
 		this.eventDate = eventDate;
 		this.eventTime = eventTime;
@@ -40,6 +44,7 @@ public class TuitionReimbursementForm {
 		this.eventType = eventType;
 		this.justification = justification;
 		this.username = username;
+		this.status = status;
 	}
 
 	public long getFormID() {
@@ -122,12 +127,28 @@ public class TuitionReimbursementForm {
 		this.username = username;
 	}
 
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getGrade() {
+		return grade;
+	}
+
+	public void setGrade(String grade) {
+		this.grade = grade;
+	}
+
 	@Override
 	public String toString() {
 		return "TuitionReimbursementForm [formID=" + formID + ", eventDate=" + eventDate + ", eventTime=" + eventTime
 				+ ", location=" + location + ", description=" + description + ", cost=" + cost + ", gradingFormat="
 				+ gradingFormat + ", eventType=" + eventType + ", justification=" + justification + ", username="
-				+ username + "]";
+				+ username + ", status=" + status + "]";
 	}
 	
 }

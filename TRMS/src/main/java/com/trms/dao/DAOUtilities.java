@@ -14,6 +14,7 @@ public class DAOUtilities {
 	
 	private static UserDaoImpl userDaoImpl = null;
 	private static FormDaoImpl formDaoImpl = null;
+	private static AdminDaoImpl adminDaoImpl = null;
 	
 	public static synchronized Connection getConnection() throws SQLException {
 		
@@ -57,6 +58,16 @@ public class DAOUtilities {
 		
 		return formDaoImpl;
 			
+	}
+	
+	public static synchronized AdminDAO getAdminDAO() {
+		
+		if(adminDaoImpl == null) {
+			adminDaoImpl = new AdminDaoImpl();
+		}
+		
+		return adminDaoImpl;
+		
 	}
 	
 }

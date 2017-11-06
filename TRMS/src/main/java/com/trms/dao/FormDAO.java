@@ -10,4 +10,6 @@ public interface FormDAO {
 	
 	List<TuitionReimbursementForm> getAllForms(String username);
 	
+	void postGrade(String formID, String grade) throws Exception;
+	
 }

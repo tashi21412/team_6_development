@@ -23,7 +23,7 @@ public class FormDaoImpl implements FormDAO {
 		
 		try {
 			connection = DAOUtilities.getConnection();
-			String sql = "INSERT INTO TUITIONREIMBURSEMENTFORM VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO TUITIONREIMBURSEMENTFORM VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			stmt = connection.prepareStatement(sql);
 			seqStmt = connection.createStatement();
 			String seqSql = "SELECT FORMIDSEQUENCE.NEXTVAL FROM DUAL";
@@ -41,6 +41,8 @@ public class FormDaoImpl implements FormDAO {
 			stmt.setString(8, trf.getEventType());
 			stmt.setString(9, trf.getJustification());
 			stmt.setString(10, trf.getUsername());
+			stmt.setString(11, trf.getStatus());
+			stmt.setString(12, trf.getGrade());
 			stmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -83,6 +85,7 @@ public class FormDaoImpl implements FormDAO {
 					trf.setEventType(rs.getString("EVENTTYPE"));
 					trf.setJustification(rs.getString("JUSTIFICATION"));
 					trf.setUsername(rs.getString("USERNAME"));
+					trf.setStatus(rs.getString("STATUS"));
 					forms.add(trf);
 				}
 			} catch (SQLException e) {
@@ -99,6 +102,35 @@ public class FormDaoImpl implements FormDAO {
 			}
 		
 		return forms;
+		
+	}
+
+	@Override
+	public void postGrade(String formID, String grade) throws Exception {
+		
+		Connection connection = null;
+		PreparedStatement stmt = null;
+		long longFormID = Long.parseLong(formID);
+		
+		try{
+			connection = DAOUtilities.getConnection();
+			String sql = "UPDATE TUITIONREIMBURSEMENTFORM SET GRADE = ? WHERE FORMID = ?";
+			stmt = connection.prepareStatement(sql);
+			stmt.setString(1, grade);
+			stmt.setLong(2, longFormID);
+			stmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(stmt != null)
+					stmt.close();
+				if(connection != null)
+					connection.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
 		
 	}
 

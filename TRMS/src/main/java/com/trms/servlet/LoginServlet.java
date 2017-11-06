@@ -33,9 +33,13 @@ public class LoginServlet extends HttpServlet {
 		UserDAO dao = DAOUtilities.getUserDAO();
 		
 		try {
-			if(dao.loginAccount(user).equals(user)) {
+			if(dao.loginAccount(user).equals(user) && !username.equals("Supervisor") && !username.equals("Head") && !username.equals("BenCo")) {
 				request.getSession().setAttribute("username", user.getUsername());
-				response.sendRedirect("homepage.jsp");
+				response.sendRedirect("homepage.html");
+			}
+			if(dao.loginAccount(user).equals(user) && (username.equals("Supervisor") || username.equals("Head") || username.equals("BenCo"))) {
+				request.getSession().setAttribute("username", user.getUsername());
+				response.sendRedirect("admin.jsp");
 			}
 		} catch (Exception e) {
 			request.getRequestDispatcher("index.html").forward(request, response);

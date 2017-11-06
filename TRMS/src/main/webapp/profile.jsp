@@ -7,7 +7,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <meta charset="UTF-8">
-    <title>Homepage</title>
+    <title>Profile</title>
   </head>
 
   <body>
@@ -38,10 +38,14 @@
     </div>
     <h2>Reimbursement History</h2>
     <div class="w3-responsive">
-    <form method="get" class="w3-container">
+    <form action="ViewFormsServlet" method="post" class="w3-container">
       <table class="w3-table-all">
       <thead>
+      
       <tr>
+
+            <th><input style="visibility: hidden; display: none;"/></th>
+
        <th>Event Date</th>
         <th>Event Time</th>
         
@@ -53,11 +57,29 @@
         <th>Grading Format</th>
         <th>Event Type</th>
         <th>Justification</th>
+        <th>Status</th>
+        <c:forEach var="form" items="${forms}">
+						 <c:choose>
+   						 <c:when test="${form.status.equals('BC-APPROVED')}">
+   						 <th>Grade</th>
+   						  </c:when>
+ 						</c:choose>   
+ 						</c:forEach>     
       </tr>
 	</thead>
 	<tbody>
 					<c:forEach var="form" items="${forms}">
 					<tr>
+								<c:choose>
+   						 <c:when test="${!form.status.equals('BC-APPROVED')}">
+					<td><input style="visibility: hidden; display: none;"/></td>
+					 </c:when>
+ 						</c:choose>
+											 <c:choose>
+   						 <c:when test="${form.status.equals('BC-APPROVED')}">
+					<td><input type="number" name="formID" value="<c:out value="${form.formID}"/>" style="visibility: hidden; display: none;"/></td>
+					 </c:when>
+ 						</c:choose>
 						<td><c:out value="${form.eventDate}" /></td>
 						
 						<td><c:out value="${form.eventTime}" /></td> 
@@ -69,6 +91,19 @@
 						<td><c:out value="${form.gradingFormat}" /></td>
 						<td><c:out value="${form.eventType}" /></td>
 						<td><c:out value="${form.justification}" /></td>
+						<td><c:out value="${form.status}" /></td>
+						 <c:choose>
+   						 <c:when test="${form.status.equals('BC-APPROVED')}">
+   						 <td><select class="w3-select"
+									id="grade" name="grade" >
+										<option value="<c:out value="${form.grade}" />"></option>
+										<option value="PASSED">PASSED</option>
+
+										<option value="FAILED">FAILED</option>
+
+								</select></td>
+   						  </c:when>
+ 						</c:choose>
 						
 			
 				
@@ -76,6 +111,14 @@
 				</c:forEach>
 	</tbody>
       </table>
+              <c:forEach var="form" items="${forms}">
+						 <c:choose>
+   						 <c:when test="${form.status.equals('BC-APPROVED')}">
+   						  <button type="submit" class="w3-btn w3-teal">Submit</button>
+   						  </c:when>
+ 						</c:choose>   
+ 						</c:forEach>
+     
        </form>
     </div>
 

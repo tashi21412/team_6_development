@@ -49,4 +49,34 @@
     <servlet-name>ViewFormsServlet</servlet-name>
     <url-pattern>/ViewFormsServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SupervisorServlet</display-name>
+    <servlet-name>SupervisorServlet</servlet-name>
+    <servlet-class>com.trms.servlet.SupervisorServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SupervisorServlet</servlet-name>
+    <url-pattern>/SupervisorServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>HeadServlet</display-name>
+    <servlet-name>HeadServlet</servlet-name>
+    <servlet-class>com.trms.servlet.HeadServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HeadServlet</servlet-name>
+    <url-pattern>/HeadServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>BenCoServlet</display-name>
+    <servlet-name>BenCoServlet</servlet-name>
+    <servlet-class>com.trms.servlet.BenCoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BenCoServlet</servlet-name>
+    <url-pattern>/BenCoServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
